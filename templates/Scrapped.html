@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en" >
+
+<head>
+  <meta charset="UTF-8">
+  <title>News Page</title>
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css">
+
+
+      <link rel="stylesheet" href="./style.css">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+
+
+</head>
+
+<body>
+
+  <div class="table-users">
+      <div class="header"> <center> <h1>iNews </h1></center> </div>
+    <form>
+  <input type="text" id="fname" name="fname">
+    <input type="submit" value="Submit" class="btn btn-secondary">
+    </form>
+   <table cellpadding="3">
+      <tr>
+          <th><h2> <center>{{ url }} </center> </h2> </th>
+      </tr>
+         {% for new in news %}
+
+      <tr>
+          <td>{{new['Titles']}}</td>
+           <td>{{new['Text']}}</td>
+             <td>{{new['Image']}}</td>
+       {% endfor %}
+   </table>
+</div>
+
+
+
+</body>
+
+</html>
